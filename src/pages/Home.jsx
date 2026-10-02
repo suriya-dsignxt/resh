@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Lock, Heart, Map } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { isDayUnlocked } from '../utils/dateLogic';
-
 import config from '../config';
-import profileImage from '../assets/reshmisuriya.jpeg';
 
 const REALMS = [
-  { id: 0, title: "Rose Realm", icon: "🌹", color: "text-rose-400", desc: "The Digital Greenhouse" },
-  { id: 1, title: "Glitch City", icon: "💍", color: "text-amber-400", desc: "A Lovestruck Error" },
-  { id: 2, title: "Choco Factory", icon: "🍫", color: "text-amber-700", desc: "Sweet Sorting Station" },
-  { id: 3, title: "Teddy Arcade", icon: "🧸", color: "text-pink-400", desc: "The Claw Machine" },
-  { id: 4, title: "Star Fields", icon: "⭐", color: "text-indigo-400", desc: "Constellation Path" },
-  { id: 5, title: "Sync Station", icon: "💓", color: "text-red-500", desc: "Heartbeat Monitor" },
-  { id: 6, title: "Cloud 9", icon: "💋", color: "text-rose-500", desc: "Raining Kisses" },
-  { id: 7, title: "Heart Vault", icon: "💝", color: "text-rose-600", desc: "The Final Gift" },
+  { id: 0, title: "Stage 01: The Spark", icon: "⏳", color: "text-amber-400", desc: "The Beginning" },
+  { id: 1, title: "Stage 02: Sanctum", icon: "🛕", color: "text-rose-400", desc: "Sacred Souvenir" },
+  { id: 2, title: "Stage 03: Neon Diner", icon: "🍽️", color: "text-orange-400", desc: "Table for Two" },
+  { id: 3, title: "Stage 04: Secret Parcel", icon: "📦", color: "text-yellow-400", desc: "Midnight Dum" },
+  { id: 4, title: "Stage 05: The Heist", icon: "🥤", color: "text-cyan-400", desc: "The Stolen Sip" },
+  { id: 5, title: "Stage 06: Road Legend", icon: "🛺", color: "text-emerald-400", desc: "Street Tag" },
+  { id: 6, title: "Stage 07: Signal", icon: "📻", color: "text-indigo-400", desc: "Transmission" },
+  { id: 7, title: "Memory Vault", icon: "🏆", color: "text-pink-400", desc: "The Archive" },
 ];
 
 const Home = () => {
@@ -29,18 +27,12 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-6 pb-24 w-full">
       <header className="mt-8 text-center space-y-4">
-        <div className="mb-6 flex justify-center">
-          <img
-            src={profileImage}
-            alt="Profile"
-            className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-[#eb6f92] shadow-[8px_8px_0_rgba(0,0,0,0.5)] object-cover animate-pulse"
-          />
-        </div>
-        <h1 className="text-2xl md:text-4xl text-[#eb6f92] animate-pulse drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-romantic">
-          MY HEART
+        <div className="text-5xl mb-2 animate-bounce">🕹️</div>
+        <h1 className="text-2xl md:text-4xl text-[#eb6f92] animate-pulse drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-pixel">
+          {config.person.title.toUpperCase()}
         </h1>
         <div className="inline-block bg-[#26233a] border-2 border-[#e0def4] px-4 py-2 text-xs md:text-sm text-[#908caa]">
-          LEVEL: VALENTINE'S WEEK
+          LEVEL: MEMORY QUEST
         </div>
       </header>
 

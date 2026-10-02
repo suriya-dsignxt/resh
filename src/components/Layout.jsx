@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
                 transform: `rotate(${Math.random() * 360}deg)`
               }}
             >
-              {Math.random() > 0.5 ? '✦' : '♥'}
+              {Math.random() > 0.5 ? '✦' : '★'}
             </div>
           ))}
         </div>

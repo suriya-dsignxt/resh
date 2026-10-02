@@ -3,15 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Lazy load interactions to keep bundle small
-const RoseDay = lazy(() => import('../components/interactions/RoseDay'));
-const ProposeDay = lazy(() => import('../components/interactions/ProposeDay'));
-const ChocolateDay = lazy(() => import('../components/interactions/ChocolateDay'));
-const TeddyDay = lazy(() => import('../components/interactions/TeddyDay'));
-const PromiseDay = lazy(() => import('../components/interactions/PromiseDay'));
-const HugDay = lazy(() => import('../components/interactions/HugDay'));
-const KissDay = lazy(() => import('../components/interactions/KissDay'));
-const ValentineDay = lazy(() => import('../components/interactions/ValentineDay'));
+// Lazy load memory interactions
+const FirstMeetupDay = lazy(() => import('../components/interactions/FirstMeetupDay'));
+const KoilKeychainDay = lazy(() => import('../components/interactions/KoilKeychainDay'));
+const CopperKitchenDay = lazy(() => import('../components/interactions/CopperKitchenDay'));
+const MuttonBiriyaniDay = lazy(() => import('../components/interactions/MuttonBiriyaniDay'));
+const ChocolateMilkshakeDay = lazy(() => import('../components/interactions/ChocolateMilkshakeDay'));
+const AutoSignDay = lazy(() => import('../components/interactions/AutoSignDay'));
+const GodBlessDay = lazy(() => import('../components/interactions/GodBlessDay'));
+const MemoryVaultDay = lazy(() => import('../components/interactions/MemoryVaultDay'));
 
 const DayView = () => {
   const { dayId } = useParams();
@@ -20,40 +20,37 @@ const DayView = () => {
   // Map index to component
   const renderInteraction = () => {
       switch(dayIndex) {
-          case 0: return <RoseDay />;
-          case 1: return <ProposeDay />;
-          case 2: return <ChocolateDay />;
-          case 3: return <TeddyDay />;
-          case 4: return <PromiseDay />;
-          case 5: return <HugDay />;
-          case 6: return <KissDay />;
-          case 7: return <ValentineDay />;
-          default: return <div className="text-rose-300">Coming soon...</div>;
+          case 0: return <FirstMeetupDay />;
+          case 1: return <KoilKeychainDay />;
+          case 2: return <CopperKitchenDay />;
+          case 3: return <MuttonBiriyaniDay />;
+          case 4: return <ChocolateMilkshakeDay />;
+          case 5: return <AutoSignDay />;
+          case 6: return <GodBlessDay />;
+          case 7: return <MemoryVaultDay />;
+          default: return <div className="text-amber-300">Quest not found...</div>;
       }
   };
 
-  // Placeholder for loading status or invalid day
-  if (isNaN(dayIndex)) return <div>Day not found</div>;
+  if (isNaN(dayIndex)) return <div className="text-center p-8 text-amber-300">Memory not found</div>;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full">
       {/* Top Navigation */}
-      <div className="p-6 pb-2">
-        <Link to="/" className="inline-flex items-center gap-2 text-rose-300 hover:text-rose-100 transition-colors">
-          <ArrowLeft size={20} />
-          <span className="text-sm font-medium">Back to Timeline</span>
+      <div className="p-4 pb-2 flex justify-start">
+        <Link to="/" className="inline-flex items-center gap-2 bg-[#26233a] border-2 border-[#eb6f92] px-3 py-1 text-xs text-[#eb6f92] hover:bg-[#eb6f92] hover:text-[#191724] transition-colors shadow">
+          <ArrowLeft size={16} />
+          <span className="font-bold">Back to Map</span>
         </Link>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 text-center">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-sm"
+          className="w-full flex justify-center"
         >
-           <h2 className="text-2xl font-bold font-cursive text-rose-400 mb-6">Day {dayIndex + 1}</h2>
-           
-           <Suspense fallback={<div className="text-rose-400">Loading...</div>}>
+           <Suspense fallback={<div className="text-amber-400 font-pixel text-xs animate-pulse">LOADING MEMORY QUEST...</div>}>
                {renderInteraction()}
            </Suspense>
         </motion.div>

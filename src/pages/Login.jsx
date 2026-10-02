@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Lock, User, Heart } from 'lucide-react';
-import profileImage from '../assets/reshmisuriya.jpeg';
+import { Lock, User, KeyRound } from 'lucide-react';
 
 const Login = ({ onLoginSuccess }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [showHints, setShowHints] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (username.toLowerCase() === 'reshmisuriya' && password.toLowerCase() === 'thangoo') {
+        if (username.toLowerCase().trim() === 'dushebunnn' && password.toLowerCase().trim() === 'yadhuviii') {
             localStorage.setItem('isAuthenticated', 'true');
             onLoginSuccess();
         } else {
@@ -39,14 +37,7 @@ const Login = ({ onLoginSuccess }) => {
             >
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <div className="mb-6 flex justify-center">
-                        <img
-                            src={profileImage}
-                            alt="Profile"
-                            className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#eb6f92] shadow-[8px_8px_0_rgba(0,0,0,0.5)] object-cover"
-                        />
-                    </div>
-                    <div className="text-6xl mb-4 animate-pulse">💝</div>
+                    <div className="text-6xl mb-4 animate-bounce">🗝️</div>
                     <h1 className="text-3xl text-[#eb6f92] mb-2 drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">
                         ACCESS REQUIRED
                     </h1>
@@ -70,7 +61,7 @@ const Login = ({ onLoginSuccess }) => {
                             required
                         />
                         <div className="mt-2 text-[10px] text-[#908caa] italic leading-relaxed">
-                            💡 Hint: On the day when that happens, I sleep peacefully - what name should I call you on that special day?
+                            💡 Hint: How do I call you?
                         </div>
                     </div>
 
@@ -89,7 +80,7 @@ const Login = ({ onLoginSuccess }) => {
                             required
                         />
                         <div className="mt-2 text-[10px] text-[#908caa] italic leading-relaxed">
-                            💡 Hint: How do I call you most of the time?
+                            💡 Hint: How do you call me?
                         </div>
                     </div>
 
@@ -110,8 +101,8 @@ const Login = ({ onLoginSuccess }) => {
                         className="w-full bg-[#eb6f92] text-[#191724] px-6 py-4 border-b-4 border-[#9f1239] active:border-b-0 active:translate-y-1 font-bold text-sm hover:bg-[#f472b6] transition-colors shadow-[4px_4px_0_rgba(0,0,0,0.3)]"
                     >
                         <span className="flex items-center justify-center gap-2">
-                            <Heart size={16} />
-                            ENTER MY HEART
+                            <KeyRound size={16} />
+                            ENTER ADVENTURE
                         </span>
                     </button>
                 </form>

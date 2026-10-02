@@ -3,54 +3,63 @@
 const config = {
     // 👤 Personal Details
     person: {
-        name: "Reshmi",  // Appears in titles and letters
-        nickname: "Thangoo",
+        name: "Dushebunnn",
+        partner: "Yadhuviii",
+        title: "Yadhu & Dushee",
     },
 
     // 📅 Key Dates
-    startDate: "2025-02-07", // The date Rose Day unlocks
+    startDate: "2026-04-11",
 
-    // 💌 Custom Messages
-    messages: {
-        rose: {
-            title: "My Digital Garden",
-            success: "You make my world bloom!"
+    // 💌 Custom Memories & Messages
+    memories: {
+        meetup: {
+            title: "FIRST MEETUP",
+            date: "Apr 11",
+            fullDate: "April 11",
+            success: "April 11 — The day our story began! 📅"
         },
-        propose: {
-            success: "SHE SAID YES!"
+        keychain: {
+            title: "KOIL LA VAANGUNATHU",
+            item: "Keychain",
+            success: "The special temple keychain locked into memory! 🔑"
         },
-        chocolate: {
-            success: "Sweetest creation ever!"
+        copperKitchen: {
+            title: "FIRST HOTEL TOGETHER",
+            place: "Copper Kitchen",
+            success: "Copper Kitchen — Table for two, unforgettable vibes! 🍽️"
         },
-        teddy: {
-            title: "TEDDY CLAW",
-            success: "I'll always catch you!"
+        biriyani: {
+            title: "PARCEL TAKEAWAY",
+            dish: "Mutton Biriyani",
+            success: "The legendary Mutton Biriyani parcel! 🍲"
         },
-        promise: {
-            title: "CONSTELLATION PATH",
-            success: "Our paths are linked forever."
+        milkshake: {
+            title: "THE STOLEN SIP",
+            drink: "Chocolate Milkshake",
+            success: "Bought for us... but drank the whole Chocolate Milkshake! 🥤"
         },
-        hug: {
-            title: "HUG STATION",
-            success: "Warmth received!"
+        auto: {
+            title: "THE SIGNED RIDE",
+            vehicle: "Auto",
+            success: "Signed and sent on the Auto! 🛺"
         },
-        kiss: {
-            success: "PERFECT RHYTHM!"
+        godBless: {
+            title: "THE SIGNATURE SIGNOFF",
+            phrase: "God Bless",
+            success: "'God Bless' — The words that end every call with warmth. ✨"
         },
-        valentine: {
-            letter: `To my Forever Love,
+        vault: {
+            title: "THE MEMORY VAULT",
+            letterTitle: "Yadhu & Dushee's Memory Archive",
+            summary: `Every little moment with you has found a special place in my memory.
+From our first meet-up on April 11, to our beautiful day at Aarupadai Veedu on april 17th and the little temple keychain we picked together…
+From sharing our first meal at Copper Kitchen to the mutton biryani I took home without even making you eat any
+And that chocolate milkshake we bought to share, which somehow became a solo treat 
+And I can’t forget the surprise you sent all the way from Sri Lanka, the little auto toy you signed when I kept asking for your autograph, the socks you chose for my leg pain after hearing me talk about it on our calls, and the new sipper you sent to replace the one I broke. You remembered all those little things and sent them to me in India… that meant so much.
+and all our conversations that end with a warm “God bless.you ”
 
-            Thank you for playing this little game. 
-            Every day with you feels like unlocking a new level of happiness.
-
-            You know? When I picture happiness, it's your face I remember.. Your charming smile, Your melodic voice, Your caring love, your beautiful hair, Your mischievous laugh..
-I can't wait to dance in the kitchen with you, hold your thigh while we sing the wrong lyrics in the car, cuddle for hours, losing track of the movie, growing old together.
-You've changed my world and I hope you always know how deeply I appreciate you... how much I adore you... how loudly my heart chooses you every single day.
-Happy Valentine's Day, my love.
-I can't wait to see you, hug you. Stay safe..
-Stay soft... Stay mine... Forever & always.
-            
-            Happy Valentine's Day Thangoo! 🖤`
+Thank you for tolerating meee and for making all these little moments so special. Here’s to our memories, our laughs, and all the lovely moments still waiting for us. ✨`
         }
     }
 };

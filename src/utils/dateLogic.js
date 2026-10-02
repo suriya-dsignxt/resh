@@ -15,20 +15,14 @@ export const getDayIndex = (date = new Date()) => {
   return diffDays;
 };
 
-// Check if a specific day (0-7) is unlocked
-export const isDayUnlocked = (dayIndex) => {
-    // Check for debug override
-    const debugDay = localStorage.getItem('debug_day_override');
-    if (debugDay !== null) {
-        return parseInt(debugDay) >= dayIndex;
-    }
-
-    const todayIndex = getDayIndex(new Date());
-    return todayIndex >= dayIndex;
+// Check if a specific memory quest (0-7) is unlocked
+export const isDayUnlocked = (_dayIndex) => {
+    // All memory quests are unlocked and playable
+    return true;
 };
 
 // Get current day's content key
 export const getDayKey = (index) => {
-    const keys = ['rose', 'propose', 'chocolate', 'teddy', 'promise', 'hug', 'kiss', 'valentine'];
+    const keys = ['meetup', 'keychain', 'copperKitchen', 'biriyani', 'milkshake', 'auto', 'godBless', 'vault'];
     return keys[index] || null;
 };
