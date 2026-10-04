@@ -31,7 +31,7 @@ const MemoryVaultDay = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     message: userMsg,
-                    sender: 'Dushee',
+                    sender: 'Reshmi',
                     type: 'completion',
                     timestamp: new Date().toISOString()
                 })

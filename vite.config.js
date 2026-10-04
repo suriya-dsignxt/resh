@@ -24,8 +24,8 @@ const emailDevPlugin = () => ({
 
             const isCompletion = type === 'completion';
             const subject = isCompletion
-              ? '🏆 Yadhu & Dushee - Memory Vault Unlocked!'
-              : '💌 New Note from Dushee - Memory Quest';
+              ? '🏆 Reshmi & Suriya - Memory Vault Unlocked!'
+              : '💌 New Note from Reshmi - Memory Quest';
 
             const htmlContent = `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 3px solid #eb6f92; border-radius: 8px; background-color: #0f172a; color: #e0def4;">
@@ -33,18 +33,18 @@ const emailDevPlugin = () => ({
                   <h1 style="color: #eb6f92; margin: 0; font-size: 24px;">
                     ${isCompletion ? '🏆 Memory Vault Completed!' : '💌 New Guestbook Message'}
                   </h1>
-                  <p style="color: #908caa; font-size: 12px; margin-top: 5px;">YADHU & DUSHEE MEMORY QUEST</p>
+                  <p style="color: #908caa; font-size: 12px; margin-top: 5px;">RESHMI & SURIYA MEMORY QUEST</p>
                 </div>
                 <div style="background-color: #191724; border: 2px solid #eb6f92; border-radius: 6px; padding: 16px; margin: 20px 0;">
                   <p style="color: #ea9d34; font-size: 12px; margin-top: 0; font-weight: bold;">
-                    FROM: ${sender || 'Dushee'}
+                    FROM: ${sender || 'Reshmi'}
                   </p>
                   <div style="color: #ffffff; font-size: 14px; line-height: 1.7; white-space: pre-wrap;">
                     ${message || '(No message content)'}
                   </div>
                 </div>
                 <p style="text-align: center; font-size: 11px; color: #908caa; margin-top: 24px; border-top: 1px solid #26233a; padding-top: 12px;">
-                  ✨ Delivered with love by Yadhu & Dushee App ✨
+                  ✨ Delivered with love by Reshmi & Suriya App ✨
                 </p>
               </div>
             `;

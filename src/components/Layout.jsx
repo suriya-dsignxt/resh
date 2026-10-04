@@ -38,21 +38,9 @@ const Layout = ({ children }) => {
       </div>
 
       {/* Main Content Area */}
-      <main className="relative z-10 w-full max-w-2xl mx-auto min-h-screen flex flex-col items-center pt-8 px-4 pb-32">
+      <main className="relative z-10 w-full max-w-4xl mx-auto min-h-screen flex flex-col items-center pt-8 px-2 sm:px-4 pb-12">
         {children}
       </main>
-
-      {/* Retro UI Inventory Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50">
-        <InventoryBar />
-      </div>
-
-
-
-      {/* Dev Tools - Enabled for Demo/Time Travel */}
-      <div className="fixed bottom-4 left-4 z-50">
-        <DevTools />
-      </div>
     </div>
   );
 };

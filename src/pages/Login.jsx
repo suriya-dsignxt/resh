@@ -10,7 +10,7 @@ const Login = ({ onLoginSuccess }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (username.toLowerCase().trim() === 'dushebunnn' && password.toLowerCase().trim() === 'yadhuviii') {
+        if (username.toLowerCase().trim() === 'thangoo' && password.toLowerCase().trim() === 'merijaan') {
             localStorage.setItem('isAuthenticated', 'true');
             onLoginSuccess();
         } else {

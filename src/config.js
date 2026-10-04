@@ -3,9 +3,9 @@
 const config = {
     // 👤 Personal Details
     person: {
-        name: "Dushebunnn",
-        partner: "Yadhuviii",
-        title: "Yadhu & Dushee",
+        name: "Reshmi",
+        partner: "Suriya",
+        title: "Reshmi & Suriya",
     },
 
     // 📅 Key Dates
@@ -51,7 +51,7 @@ const config = {
         },
         vault: {
             title: "THE MEMORY VAULT",
-            letterTitle: "Yadhu & Dushee's Memory Archive",
+            letterTitle: "Reshmi & Suriya's Memory Archive",
             summary: `Every little moment with you has found a special place in my memory.
 From our first meet-up on April 11, to our beautiful day at Aarupadai Veedu on april 17th and the little temple keychain we picked together…
 From sharing our first meal at Copper Kitchen to the mutton biryani I took home without even making you eat any

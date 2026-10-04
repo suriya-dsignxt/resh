@@ -55,7 +55,7 @@ const GodBlessDay = () => {
             {/* Radio Receiver Station */}
             <div className="w-full bg-[#191724] border-4 border-[#c678dd] p-5 sm:p-6 shadow-[8px_8px_0_#c678dd]">
                 <div className="text-[10px] text-[#c678dd] uppercase tracking-widest text-center mb-4 font-mono">
-                    📡 DUSHEE & YADHU FREQUENCY RECEIVER 📡
+                    📡 RESHMI & SURIYA FREQUENCY RECEIVER 📡
                 </div>
 
                 {/* Oscilloscope Frequency Display */}

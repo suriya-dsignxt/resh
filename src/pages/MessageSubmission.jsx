@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, BookOpen } from 'lucide-react';
 import config from '../config';
+import { playBgMusic } from '../utils/audioManager';
 
 const MessageSubmission = ({ onSubmitSuccess }) => {
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [isSending, setIsSending] = useState(false);
 
+    const MIN_CHARACTERS = 200;
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (message.trim().length < 5) {
-            setError('Please write at least a few words!');
+        // Start background music immediately from user click gesture
+        playBgMusic();
+
+        if (message.trim().length < MIN_CHARACTERS) {
+            setError(`Please write at least ${MIN_CHARACTERS} characters!`);
             setTimeout(() => setError(''), 3000);
             return;
         }
@@ -33,7 +39,7 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
                 },
                 body: JSON.stringify({
                     message: message.trim(),
-                    sender: 'Dushee',
+                    sender: 'Reshmi',
                     type: 'submission',
                     timestamp: new Date().toISOString()
                 })
@@ -47,7 +53,7 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
     };
 
     const charCount = message.trim().length;
-    const isValid = charCount >= 5 && !isSending;
+    const isValid = charCount >= MIN_CHARACTERS && !isSending;
 
     return (
         <div className="min-h-screen bg-[#0f172a] text-[#e0def4] font-pixel overflow-hidden relative crt selection:bg-[#eb6f92] selection:text-[#191724] flex items-center justify-center p-4">
@@ -80,8 +86,8 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
                 <form onSubmit={handleSubmit} className="bg-[#191724] border-4 border-[#eb6f92] p-6 md:p-8 shadow-[8px_8px_0_rgba(0,0,0,0.5)]">
                     {/* Question Prompt */}
                     <div className="mb-6 bg-[#26233a] border-2 border-[#eb6f92] p-4">
-                        <p className="text-[#eb6f92] text-sm md:text-base leading-relaxed text-center">
-                            A quick memory or message for {config.person.title}:
+                        <p className="text-[#eb6f92] text-sm md:text-base leading-relaxed text-center font-medium">
+                            A quick Message For us , regarding whatever you think or you holding on to say to me for a long time and what am i to you ?
                         </p>
                     </div>
 
@@ -90,7 +96,7 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
                         <textarea
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                            className="w-full bg-[#26233a] border-2 border-[#908caa] px-4 py-3 text-[#e0def4] focus:border-[#eb6f92] focus:outline-none min-h-[160px] resize-none leading-relaxed font-sans"
+                            className="w-full bg-[#26233a] border-2 border-[#908caa] px-4 py-3 text-[#e0def4] focus:border-[#eb6f92] focus:outline-none min-h-[180px] resize-none leading-relaxed font-sans"
                             placeholder="Type your message here... ✨"
                             required
                         />
@@ -98,10 +104,13 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
                         {/* Character Counter */}
                         <div className="mt-2 flex justify-between items-center text-xs">
                             <span className={`${isValid ? 'text-green-400' : 'text-amber-400'}`}>
-                                {isValid ? '✓ Ready to submit' : '✍️ Write a quick note'}
+                                {isValid
+                                    ? '✓ Ready to submit'
+                                    : `✍️ Need ${MIN_CHARACTERS - charCount} more character${(MIN_CHARACTERS - charCount) === 1 ? '' : 's'}`
+                                }
                             </span>
                             <span className="text-[#908caa]">
-                                {charCount} characters
+                                {charCount} / {MIN_CHARACTERS} characters
                             </span>
                         </div>
                     </div>
@@ -133,7 +142,7 @@ const MessageSubmission = ({ onSubmitSuccess }) => {
                                 ? 'TRANSMITTING NOTE... ✨'
                                 : isValid
                                     ? 'ENTER MEMORY QUEST'
-                                    : 'WRITE A NOTE TO CONTINUE'
+                                    : `WRITE A NOTE TO CONTINUE (${charCount}/${MIN_CHARACTERS})`
                             }
                         </span>
                     </button>
