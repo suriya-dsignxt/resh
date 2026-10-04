@@ -51,7 +51,7 @@ const emailDevPlugin = () => ({
 
             await transporter.sendMail({
               from: '"Memory Quest" <packmycake@gmail.com>',
-              to: 'Yadhusankar108@gmail.com',
+              to: 'sekarsuriya16@gmail.com',
               subject: subject,
               text: message || '',
               html: htmlContent

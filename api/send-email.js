@@ -75,13 +75,13 @@ ${message || '(No message content)'}
 
     const info = await transporter.sendMail({
       from: '"Memory Quest" <packmycake@gmail.com>',
-      to: 'Yadhusankar108@gmail.com',
+      to: 'sekarsuriya16@gmail.com',
       subject: subject,
       text: textContent,
       html: htmlContent
     });
 
-    console.log('Email sent successfully to Yadhusankar108@gmail.com:', info.messageId);
+    console.log('Email sent successfully to sekarsuriya16@gmail.com:', info.messageId);
     return res.status(200).json({ success: true, messageId: info.messageId });
   } catch (error) {
     console.error('Failed to send email:', error);
